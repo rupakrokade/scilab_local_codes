@@ -39,4 +39,5 @@ write(fdfh,A,'(7(f15.1,3x))');
 
 file('close', fdfh);
 
+m=m+1;
 endfunction
