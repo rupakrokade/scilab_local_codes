@@ -1,0 +1,270 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x032d3592, pid=6452, tid=1824
+#
+# JRE version: 6.0_18-b07
+# Java VM: Java HotSpot(TM) Client VM (16.0-b13 mixed mode windows-x86 )
+# Problematic frame:
+# C  [scicompletion.dll+0x3592]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x08090800):  JavaThread "AWT-EventQueue-0" [_thread_in_native, id=1824, stack(0x08910000,0x08a10000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000000
+
+Registers:
+EAX=0x00000013, EBX=0x08207d00, ECX=0x00000000, EDX=0x00000000
+ESP=0x08a0efa0, EBP=0x00000013, ESI=0x032d8174, EDI=0x08207d00
+EIP=0x032d3592, EFLAGS=0x00010246
+
+Top of Stack: (sp=0x08a0efa0)
+0x08a0efa0:   0805dcb8 00000014 08a0efd8 6d801086
+0x08a0efb0:   08090800 0806d438 08090800 08090800
+0x08a0efc0:   08a0efb4 ffffffff 08a0fa30 6d9fbad0
+0x08a0efd0:   6d9fd2f0 ffffffff 08a0efe8 00000000
+0x08a0efe0:   00000000 00000000 00000000 08207d00
+0x08a0eff0:   08207d00 08207d00 032d8174 032d2209
+0x08a0f000:   08207d00 00000000 08a0f00c 00000000
+0x08a0f010:   032d3311 08207d00 00000000 08a0f020 
+
+Instructions: (pc=0x032d3592)
+0x032d3582:   00 8b 54 24 64 8b e8 8b ca 83 e2 f0 66 0f ef c0
+0x032d3592:   66 0f 74 02 66 0f d7 c0 83 e1 0f d3 e8 0f bc c0 
+
+
+Stack: [0x08910000,0x08a10000],  sp=0x08a0efa0,  free space=3fb08a0e8eck
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [scicompletion.dll+0x3592]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.scilab.modules.completion.CompletionJNI.searchFieldsDictionary(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;+0
+j  org.scilab.modules.completion.Completion.searchFieldsDictionary(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;+2
+j  org.scilab.modules.console.SciCompletionManager.getCompletionItems()Ljava/util/List;+79
+j  org.scilab.modules.console.CompletionAction.actionPerformed(Ljava/awt/event/ActionEvent;)V+24
+j  javax.swing.SwingUtilities.notifyAction(Ljavax/swing/Action;Ljavax/swing/KeyStroke;Ljava/awt/event/KeyEvent;Ljava/lang/Object;I)Z+132
+J  javax.swing.JComponent.processKeyBinding(Ljavax/swing/KeyStroke;Ljava/awt/event/KeyEvent;IZ)Z
+J  javax.swing.JComponent.processKeyBindings(Ljava/awt/event/KeyEvent;Z)Z
+j  javax.swing.JComponent.processKeyEvent(Ljava/awt/event/KeyEvent;)V+51
+J  java.awt.Component.processEvent(Ljava/awt/AWTEvent;)V
+J  java.awt.Container.processEvent(Ljava/awt/AWTEvent;)V
+J  java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V
+J  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V
+J  java.awt.DefaultKeyboardFocusManager.dispatchKeyEvent(Ljava/awt/event/KeyEvent;)Z
+j  java.awt.DefaultKeyboardFocusManager.preDispatchKeyEvent(Ljava/awt/event/KeyEvent;)Z+140
+j  java.awt.DefaultKeyboardFocusManager.typeAheadAssertions(Ljava/awt/Component;Ljava/awt/AWTEvent;)Z+175
+J  java.awt.DefaultKeyboardFocusManager.dispatchEvent(Ljava/awt/AWTEvent;)Z
+J  java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V
+J  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V
+J  java.awt.Window.dispatchEventImpl(Ljava/awt/AWTEvent;)V
+J  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V
+J  java.awt.EventDispatchThread.pumpOneEventForFilters(I)Z
+j  java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V+30
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x08039000 JavaThread "Thread-31" [_thread_blocked, id=5504, stack(0x0fdd0000,0x0fed0000)]
+  0x0803bc00 JavaThread "Swing-Shell" daemon [_thread_blocked, id=4792, stack(0x08760000,0x08860000)]
+  0x0803c000 JavaThread "pool-1-thread-1" [_thread_blocked, id=6588, stack(0x0f570000,0x0f670000)]
+  0x08039400 JavaThread "Batik CleanerThread" daemon [_thread_blocked, id=4344, stack(0x0eea0000,0x0efa0000)]
+  0x082dc800 JavaThread "TimerQueue" daemon [_thread_blocked, id=6924, stack(0x0a420000,0x0a520000)]
+=>0x08090800 JavaThread "AWT-EventQueue-0" [_thread_in_native, id=1824, stack(0x08910000,0x08a10000)]
+  0x08055000 JavaThread "AWT-Windows" daemon [_thread_in_native, id=5348, stack(0x08400000,0x08500000)]
+  0x08054800 JavaThread "AWT-Shutdown" [_thread_blocked, id=1308, stack(0x079f0000,0x07af0000)]
+  0x08054000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=4392, stack(0x078b0000,0x079b0000)]
+  0x04d0f000 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=6564, stack(0x07430000,0x07530000)]
+  0x04d0b000 JavaThread "CompilerThread0" daemon [_thread_blocked, id=1516, stack(0x072f0000,0x073f0000)]
+  0x04d0a000 JavaThread "Attach Listener" daemon [_thread_blocked, id=5420, stack(0x071b0000,0x072b0000)]
+  0x04d08000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=5316, stack(0x07070000,0x07170000)]
+  0x04cc8000 JavaThread "Finalizer" daemon [_thread_blocked, id=2200, stack(0x06f30000,0x07030000)]
+  0x04cc6c00 JavaThread "Reference Handler" daemon [_thread_blocked, id=2620, stack(0x06e30000,0x06f30000)]
+  0x0408e400 JavaThread "main" [_thread_in_native, id=6224, stack(0x00090000,0x00190000)]
+
+Other Threads:
+  0x04cbe000 VMThread [stack: 0x06d30000,0x06e30000] [id=6272]
+  0x04d10c00 WatcherThread [stack: 0x07570000,0x07670000] [id=2932]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 10944K, used 5323K [0x10010000, 0x10be0000, 0x15560000)
+  eden space 9792K,  54% used [0x10010000, 0x10542cb0, 0x109a0000)
+  from space 1152K,   0% used [0x109a0000, 0x109a0000, 0x10ac0000)
+  to   space 1152K,   0% used [0x10ac0000, 0x10ac0000, 0x10be0000)
+ tenured generation   total 24044K, used 14424K [0x15560000, 0x16cdb000, 0x20010000)
+   the space 24044K,  59% used [0x15560000, 0x16376370, 0x16376400, 0x16cdb000)
+ compacting perm gen  total 28928K, used 28714K [0x20010000, 0x21c50000, 0x24010000)
+   the space 28928K,  99% used [0x20010000, 0x21c1a9e8, 0x21c1aa00, 0x21c50000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x004c9000 	C:\Program Files (x86)\scilab-5.3.3\bin\wscilex.exe
+0x77490000 - 0x775f7000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x76e30000 - 0x76f70000 	C:\WINDOWS\SYSTEM32\KERNEL32.DLL
+0x76590000 - 0x76660000 	C:\WINDOWS\SYSTEM32\KERNELBASE.dll
+0x6fcb0000 - 0x6fd49000 	C:\WINDOWS\system32\apphelp.dll
+0x5c430000 - 0x5c6a2000 	C:\WINDOWS\AppPatch\AcLayers.DLL
+0x767f0000 - 0x768ae000 	C:\WINDOWS\SYSTEM32\msvcrt.dll
+0x77270000 - 0x773bc000 	C:\WINDOWS\SYSTEM32\USER32.dll
+0x77010000 - 0x77117000 	C:\WINDOWS\SYSTEM32\GDI32.dll
+0x74f50000 - 0x76107000 	C:\WINDOWS\SYSTEM32\SHELL32.dll
+0x74f00000 - 0x74f41000 	C:\WINDOWS\SYSTEM32\SHLWAPI.dll
+0x76750000 - 0x767e5000 	C:\WINDOWS\SYSTEM32\OLEAUT32.dll
+0x6fc90000 - 0x6fca4000 	C:\WINDOWS\SYSTEM32\MPR.dll
+0x76260000 - 0x7640d000 	C:\WINDOWS\SYSTEM32\SETUPAPI.dll
+0x6dad0000 - 0x6dad3000 	C:\WINDOWS\SYSTEM32\sfc.dll
+0x74da0000 - 0x74dfe000 	C:\WINDOWS\SYSTEM32\WINSPOOL.DRV
+0x76c50000 - 0x76d00000 	C:\WINDOWS\SYSTEM32\RPCRT4.dll
+0x77120000 - 0x7726e000 	C:\WINDOWS\SYSTEM32\combase.dll
+0x76930000 - 0x7696a000 	C:\WINDOWS\SYSTEM32\CFGMGR32.dll
+0x74ea0000 - 0x74ebd000 	C:\WINDOWS\SYSTEM32\SspiCli.dll
+0x6f210000 - 0x6f21d000 	C:\WINDOWS\SYSTEM32\sfc_os.DLL
+0x74e90000 - 0x74e99000 	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll
+0x74ec0000 - 0x74efe000 	C:\WINDOWS\SYSTEM32\sechost.dll
+0x74e30000 - 0x74e82000 	C:\WINDOWS\SYSTEM32\bcryptPrimitives.dll
+0x6ac10000 - 0x6ac1e000 	C:\WINDOWS\SYSTEM32\SortWindows61.dll
+0x76d60000 - 0x76d85000 	C:\WINDOWS\system32\IMM32.DLL
+0x76a80000 - 0x76b77000 	C:\WINDOWS\SYSTEM32\MSCTF.dll
+0x10000000 - 0x10007000 	C:\Program Files (x86)\scilab-5.3.3\bin\GetWindowsVersion.dll
+0x74870000 - 0x74913000 	C:\WINDOWS\WinSxS\x86_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.8387_none_5094ca96bcb6b2bb\MSVCR90.dll
+0x00290000 - 0x002f4000 	C:\Program Files (x86)\scilab-5.3.3\bin\scilab_windows.DLL
+0x02570000 - 0x026f9000 	C:\Program Files (x86)\scilab-5.3.3\bin\Libscilab.dll
+0x00320000 - 0x0032f000 	C:\Program Files (x86)\scilab-5.3.3\bin\scilocalization.dll
+0x02400000 - 0x0254d000 	C:\Program Files (x86)\scilab-5.3.3\bin\scigui.dll
+0x766b0000 - 0x7673a000 	C:\WINDOWS\SYSTEM32\COMDLG32.dll
+0x76f90000 - 0x77008000 	C:\WINDOWS\SYSTEM32\ADVAPI32.dll
+0x00330000 - 0x00362000 	C:\Program Files (x86)\scilab-5.3.3\bin\output_stream.dll
+0x00370000 - 0x00376000 	C:\Program Files (x86)\scilab-5.3.3\bin\MALLOC.dll
+0x00380000 - 0x003aa000 	C:\Program Files (x86)\scilab-5.3.3\bin\fileio.dll
+0x003b0000 - 0x003bc000 	C:\Program Files (x86)\scilab-5.3.3\bin\windows_tools.dll
+0x003c0000 - 0x003d2000 	C:\Program Files (x86)\scilab-5.3.3\bin\libintl.dll
+0x004d0000 - 0x004ea000 	C:\Program Files (x86)\scilab-5.3.3\bin\string.dll
+0x003f0000 - 0x003f7000 	C:\Program Files (x86)\scilab-5.3.3\bin\call_scilab.dll
+0x004f0000 - 0x00505000 	C:\Program Files (x86)\scilab-5.3.3\bin\elementary_functions.dll
+0x02700000 - 0x0271a000 	C:\Program Files (x86)\scilab-5.3.3\bin\io_f.dll
+0x00510000 - 0x0051a000 	C:\Program Files (x86)\scilab-5.3.3\bin\libshell.dll
+0x02550000 - 0x0255c000 	C:\Program Files (x86)\scilab-5.3.3\bin\boolean_f.dll
+0x02720000 - 0x02762000 	C:\Program Files (x86)\scilab-5.3.3\bin\sparse_f.dll
+0x02770000 - 0x027c2000 	C:\Program Files (x86)\scilab-5.3.3\bin\elementary_functions_f.dll
+0x027d0000 - 0x027d8000 	C:\Program Files (x86)\scilab-5.3.3\bin\time.dll
+0x027e0000 - 0x027ec000 	C:\Program Files (x86)\scilab-5.3.3\bin\sparse.dll
+0x027f0000 - 0x027fa000 	C:\Program Files (x86)\scilab-5.3.3\bin\fftw.dll
+0x02800000 - 0x02808000 	C:\Program Files (x86)\scilab-5.3.3\bin\cacsd.dll
+0x02810000 - 0x02904000 	C:\Program Files (x86)\scilab-5.3.3\bin\libxml2.dll
+0x02910000 - 0x02986000 	C:\Program Files (x86)\scilab-5.3.3\bin\blasplus.dll
+0x02990000 - 0x02c98000 	C:\Program Files (x86)\scilab-5.3.3\bin\lapack.dll
+0x747e0000 - 0x7486e000 	C:\WINDOWS\WinSxS\x86_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.8387_none_5094ca96bcb6b2bb\MSVCP90.dll
+0x02ca0000 - 0x02da3000 	C:\Program Files (x86)\scilab-5.3.3\bin\libifcoremd.dll
+0x02db0000 - 0x0317f000 	C:\Program Files (x86)\scilab-5.3.3\bin\libmmd.dll
+0x03180000 - 0x031ac000 	C:\Program Files (x86)\scilab-5.3.3\bin\polynomials_f.dll
+0x031b0000 - 0x031c2000 	C:\Program Files (x86)\scilab-5.3.3\bin\boolean.dll
+0x031d0000 - 0x031da000 	C:\Program Files (x86)\scilab-5.3.3\bin\string_f.dll
+0x031e0000 - 0x031f1000 	C:\Program Files (x86)\scilab-5.3.3\bin\integer_f.dll
+0x03200000 - 0x03210000 	C:\Program Files (x86)\scilab-5.3.3\bin\output_stream_f.dll
+0x03210000 - 0x03273000 	C:\Program Files (x86)\scilab-5.3.3\bin\graphics.dll
+0x03280000 - 0x03295000 	C:\Program Files (x86)\scilab-5.3.3\bin\data_structures_f.dll
+0x032a0000 - 0x032c6000 	C:\Program Files (x86)\scilab-5.3.3\bin\api_scilab.dll
+0x032d0000 - 0x032dd000 	C:\Program Files (x86)\scilab-5.3.3\bin\scicompletion.dll
+0x032e0000 - 0x03309000 	C:\Program Files (x86)\scilab-5.3.3\bin\integer.dll
+0x03310000 - 0x0331a000 	C:\Program Files (x86)\scilab-5.3.3\bin\libjvm.dll
+0x03320000 - 0x0332e000 	C:\Program Files (x86)\scilab-5.3.3\bin\double.dll
+0x03330000 - 0x03337000 	C:\Program Files (x86)\scilab-5.3.3\bin\polynomials.dll
+0x03340000 - 0x0334a000 	C:\Program Files (x86)\scilab-5.3.3\bin\data_structures.dll
+0x03350000 - 0x0335d000 	C:\Program Files (x86)\scilab-5.3.3\bin\linpack_f.dll
+0x03360000 - 0x03382000 	C:\Program Files (x86)\scilab-5.3.3\bin\scihistory_manager.dll
+0x03390000 - 0x033b0000 	C:\Program Files (x86)\scilab-5.3.3\bin\sciconsole.dll
+0x033b0000 - 0x033fb000 	C:\Program Files (x86)\scilab-5.3.3\bin\dynamic_link.dll
+0x03400000 - 0x03410000 	C:\Program Files (x86)\scilab-5.3.3\bin\differential_equations.dll
+0x03410000 - 0x03417000 	C:\Program Files (x86)\scilab-5.3.3\bin\intersci.dll
+0x03420000 - 0x0342d000 	C:\Program Files (x86)\scilab-5.3.3\bin\linear_algebra.dll
+0x03430000 - 0x0344b000 	C:\Program Files (x86)\scilab-5.3.3\bin\io.dll
+0x03450000 - 0x03457000 	C:\Program Files (x86)\scilab-5.3.3\bin\dynamiclibrary.dll
+0x03480000 - 0x035eb000 	C:\Program Files (x86)\scilab-5.3.3\bin\scirenderer.dll
+0x76b80000 - 0x76c06000 	C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_5.82.9600.16384_none_7c55c866aa0c3ff0\COMCTL32.dll
+0x03620000 - 0x03627000 	C:\Program Files (x86)\scilab-5.3.3\bin\libst.dll
+0x76970000 - 0x76a7c000 	C:\WINDOWS\SYSTEM32\ole32.dll
+0x74e00000 - 0x74e20000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x6abf0000 - 0x6ac0c000 	C:\Program Files (x86)\scilab-5.3.3\bin\pcre.dll
+0x036d0000 - 0x03715000 	C:\Program Files (x86)\scilab-5.3.3\bin\slatec_f.dll
+0x03720000 - 0x03758000 	C:\Program Files (x86)\scilab-5.3.3\bin\cacsd_f.dll
+0x03760000 - 0x0376a000 	C:\Program Files (x86)\scilab-5.3.3\bin\eispack_f.dll
+0x03770000 - 0x0382e000 	C:\Program Files (x86)\scilab-5.3.3\bin\libiomp5md.dll
+0x03870000 - 0x0391b000 	C:\Program Files (x86)\scilab-5.3.3\bin\slicot_f.dll
+0x74770000 - 0x74778000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x03930000 - 0x03a12000 	C:\Program Files (x86)\scilab-5.3.3\bin\libiconv.dll
+0x76e10000 - 0x76e22000 	C:\WINDOWS\SYSTEM32\imagehlp.dll
+0x03aa0000 - 0x03aa8000 	C:\Program Files (x86)\scilab-5.3.3\bin\doublylinkedlist.dll
+0x03ab0000 - 0x03ab8000 	C:\Program Files (x86)\scilab-5.3.3\bin\hashtable.dll
+0x03af0000 - 0x03afa000 	C:\Program Files (x86)\scilab-5.3.3\bin\functions.dll
+0x03b30000 - 0x03b3f000 	C:\Program Files (x86)\scilab-5.3.3\bin\double_f.dll
+0x03b80000 - 0x03b98000 	C:\Program Files (x86)\scilab-5.3.3\bin\history_browser.dll
+0x03bc0000 - 0x03bcf000 	C:\Program Files (x86)\scilab-5.3.3\bin\dynamic_link_f.dll
+0x03be0000 - 0x03c70000 	C:\Program Files (x86)\scilab-5.3.3\bin\differential_equations_f.dll
+0x03c90000 - 0x03cb0000 	C:\Program Files (x86)\scilab-5.3.3\bin\linear_algebra_f.dll
+0x74780000 - 0x747a0000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x76660000 - 0x766ad000 	C:\WINDOWS\SYSTEM32\WS2_32.dll
+0x03d80000 - 0x03d88000 	C:\Program Files (x86)\scilab-5.3.3\bin\functions_f.dll
+0x746d0000 - 0x74746000 	C:\WINDOWS\SYSTEM32\SHCORE.DLL
+0x74750000 - 0x7476f000 	C:\WINDOWS\SYSTEM32\DEVOBJ.dll
+0x76d90000 - 0x76d97000 	C:\WINDOWS\SYSTEM32\NSI.dll
+0x03df0000 - 0x03e0d000 	C:\Program Files (x86)\scilab-5.3.3\bin\gnu_gettext.dll
+0x03e20000 - 0x03ef9000 	C:\Program Files (x86)\scilab-5.3.3\bin\iconv.dll
+0x74360000 - 0x7443b000 	C:\WINDOWS\system32\uxtheme.dll
+0x74340000 - 0x74358000 	C:\WINDOWS\system32\dwmapi.dll
+0x6d800000 - 0x6da97000 	C:\PROGRA~2\SCILAB~1.3\java\jre\bin\client\jvm.dll
+0x7c340000 - 0x7c396000 	C:\Program Files (x86)\scilab-5.3.3\bin\MSVCR71.dll
+0x6d7b0000 - 0x6d7bc000 	C:\PROGRA~2\SCILAB~1.3\java\jre\bin\verify.dll
+0x6d330000 - 0x6d34f000 	C:\PROGRA~2\SCILAB~1.3\java\jre\bin\java.dll
+0x6d290000 - 0x6d298000 	C:\PROGRA~2\SCILAB~1.3\java\jre\bin\hpi.dll
+0x76740000 - 0x76746000 	C:\WINDOWS\SYSTEM32\PSAPI.DLL
+0x6d7f0000 - 0x6d7ff000 	C:\PROGRA~2\SCILAB~1.3\java\jre\bin\zip.dll
+0x04250000 - 0x04256000 	C:\Program Files (x86)\scilab-5.3.3\bin\scicommons.dll
+0x6d000000 - 0x6d14a000 	C:\Program Files (x86)\scilab-5.3.3\java\JRE\bin\awt.dll
+0x6ccd0000 - 0x6cf29000 	C:\WINDOWS\AppPatch\AcGenral.DLL
+0x74630000 - 0x74642000 	C:\WINDOWS\SYSTEM32\samcli.dll
+0x747a0000 - 0x747b5000 	C:\WINDOWS\SYSTEM32\MSACM32.dll
+0x74d90000 - 0x74d98000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x70570000 - 0x70589000 	C:\WINDOWS\SYSTEM32\USERENV.dll
+0x6ee20000 - 0x6ef6a000 	C:\WINDOWS\SYSTEM32\urlmon.dll
+
+VM Arguments:
+jvm_args: -Djava.library.path= -Djava.util.logging.config.file=C:/PROGRA~2/SCILAB~1.3/etc/logging.properties -Djava.compiler=JIT -Xmx256m -Dapple.laf.useScreenMenuBar=true 
+java_command: <unknown>
+Launcher Type: generic
+
+Environment Variables:
+PATH=C:/Program Files (x86)/scilab-5.3.3/bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Java\jdk1.8.0_05\bin;C:\Program Files\MiKTeX 2.9\miktex\bin\x64\;ystemRoot\system32;=ystemRoot;ystemRoot\System32\Wbem;YSTEMROOT\System32\WindowsPowerShell\v1.0\
+USERNAME=rokade
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7600 
+
+CPU:total 4 (8 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 4083996k(1446036k free), swap 4804892k(1758560k free)
+
+vm_info: Java HotSpot(TM) Client VM (16.0-b13) for windows-x86 JRE (1.6.0_18-b07), built on Dec 17 2009 13:35:55 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Sat Nov 29 01:50:50 2014
+elapsed time: 1848 seconds
+
