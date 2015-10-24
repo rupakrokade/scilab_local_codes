@@ -1,5 +1,5 @@
-readserial
-writeserial
-openserial
-serialstatus
 closeserial
+openserial
+readserial
+serialstatus
+writeserial
