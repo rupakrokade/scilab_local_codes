@@ -8,7 +8,9 @@ function status = init(port)
         port_num = port(1);
         handl = openserial(port_num,"9600,n,8,0")
     else
-        port_num = port(2);
+        port_val = port(2);
+        num=part(port_val,4:$);
+        port_num = strtod(num);
         handl = openserial(port_num,"9600,n,8")
     end
 
